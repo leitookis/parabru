@@ -216,6 +216,25 @@ footer {
 }
 
 @media(max-width: 500px) {
+  
+@media(max-width: 500px) {
+  .seccion {
+    padding: 70px 22px;
+  }
+
+  .carta {
+    padding: 25px 20px;
+  }
+
+  .galeria {
+    gap: 25px 12px;
+  }
+
+  .foto-7 {
+    width: 75%;
+  }
+}
+
   .seccion {
     padding: 70px 22px;
   }
@@ -272,6 +291,49 @@ footer {
 <section class="seccion">
 
   <h2>Tarada.</h2>
+
+<section class="seccion galeria-seccion">
+  <h2>Fotitos.</h2>
+
+  <p>Te odio demasiado ♡</p>
+
+  <div class="galeria">
+
+    <div class="polaroid foto-1">
+      <img src="fotos/WhatsApp%20Image%202026-11-10%20at%2010.53.31%20PM.jpeg" alt="Nuestro recuerdo 1">
+    </div>
+
+    <div class="polaroid foto-2">
+      <img src="fotos/WhatsApp%20Image%202026-11-10%20at%2010.53.39%20PM.jpeg" alt="Nuestro recuerdo 2">
+    </div>
+
+    <div class="polaroid foto-3">
+      <img src="fotos/WhatsApp%20Image%202026-11-10%20at%2010.53.50%20PM.jpeg" alt="Nuestro recuerdo 3">
+    </div>
+
+    <div class="polaroid foto-4">
+      <img src="fotos/WhatsApp%20Image%202026-11-10%20at%2010.54.59%20PM%20(1).jpeg" alt="Nuestro recuerdo 4">
+    </div>
+
+    <div class="polaroid foto-5">
+      <img src="fotos/WhatsApp%20Image%202026-11-10%20at%2010.54.59%20PM%20(2).jpeg" alt="Nuestro recuerdo 5">
+    </div>
+
+    <div class="polaroid foto-6">
+      <img src="fotos/WhatsApp%20Image%202026-11-10%20at%2010.54.59%20PM%20(3).jpeg" alt="Nuestro recuerdo 6">
+    </div>
+
+    <div class="polaroid foto-7">
+      <img src="fotos/WhatsApp%20Image%202026-11-10%20at%2010.54.59%20PM%20(4).jpeg" alt="Nuestro recuerdo 7">
+    </div>
+
+  </div>
+</section>
+
+<div class="visor" id="visor" onclick="cerrarFoto()">
+  <span>×</span>
+  <img id="fotoGrande" src="" alt="Fotografía ampliada">
+</div>
 
   <div class="carta">
 
@@ -374,6 +436,18 @@ setInterval(crearCorazon, 1500);
 
 for (let i = 0; i < 35; i++) {
   crearEstrellas();
+}
+
+document.querySelectorAll('.polaroid img').forEach(img => {
+  img.addEventListener('click', () => {
+    document.getElementById('fotoGrande').src = img.src;
+
+    document.getElementById('visor').classList.add('activo');
+  });
+});
+
+function cerrarFoto() {
+  document.getElementById('visor').classList.remove('activo');
 }
 
 </script>

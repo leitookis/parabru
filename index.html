@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Te amo ♡</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,7 +56,6 @@ body::before {
   align-items: center;
   padding: 30px 20px;
   text-align: center;
-  position: relative;
 }
 
 .contenido {
@@ -170,6 +168,95 @@ footer {
   font-style: italic;
 }
 
+/* GALERÍA DE FOTOGRAFÍAS */
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px 18px;
+  margin: 45px auto 0;
+  max-width: 570px;
+  align-items: center;
+}
+
+.polaroid {
+  background: #e8e2ee;
+  padding: 6px 6px 9px;
+  border-radius: 3px;
+  box-shadow: 0 12px 35px #00000090,
+              0 0 15px #8655b533;
+  cursor: pointer;
+  transition: transform .35s, box-shadow .35s;
+  width: 100%;
+  max-width: 155px;
+  justify-self: center;
+}
+
+.polaroid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1.15;
+  object-fit: cover;
+  background: #211a2b;
+}
+
+.polaroid:hover {
+  transform: scale(1.07) rotate(0deg);
+  box-shadow: 0 15px 40px #8655b577;
+  z-index: 3;
+}
+
+.foto-1 { transform: rotate(-5deg); }
+.foto-2 { transform: rotate(4deg) translateY(15px); }
+.foto-3 { transform: rotate(3deg); }
+.foto-4 { transform: rotate(-4deg) translateY(12px); }
+.foto-5 { transform: rotate(-3deg); }
+.foto-6 { transform: rotate(5deg) translateY(12px); }
+
+.foto-7 {
+  grid-column: 2;
+  width: 100%;
+  max-width: 155px;
+  justify-self: center;
+  transform: rotate(-2deg);
+}
+
+/* VISOR DE FOTOGRAFÍAS */
+
+.visor {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #05040af2;
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  cursor: pointer;
+}
+
+.visor.activo {
+  display: flex;
+}
+
+.visor img {
+  max-width: 90%;
+  max-height: 82vh;
+  object-fit: contain;
+  border: 8px solid #e8e2ee;
+  box-shadow: 0 0 40px #8655b577;
+  cursor: default;
+}
+
+.visor span {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: white;
+  font-size: 45px;
+  cursor: pointer;
+}
+
 .estrella {
   position: fixed;
   pointer-events: none;
@@ -215,8 +302,8 @@ footer {
   50% { opacity: .9; }
 }
 
-@media(max-width: 500px) {
-  
+/* ADAPTACIÓN PARA CELULARES */
+
 @media(max-width: 500px) {
   .seccion {
     padding: 70px 22px;
@@ -226,26 +313,20 @@ footer {
     padding: 25px 20px;
   }
 
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 30px 18px;
-  margin: 45px auto 0;
-  max-width: 620px;
-  align-items: center;
-}
+  .galeria {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px 15px;
+    max-width: 340px;
+  }
+
+  .polaroid {
+    max-width: 140px;
+  }
 
   .foto-7 {
-    width: 75%;
-  }
-}
-
-  .seccion {
-    padding: 70px 22px;
-  }
-
-  .carta {
-    padding: 25px 20px;
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 140px;
   }
 }
 </style>
@@ -256,13 +337,10 @@ footer {
 <section class="portada">
   <div class="contenido">
     <div class="flor">🌙</div>
-
     <h1>Te amo</h1>
-
     <p class="subtitulo">
       para la persona más boluda♡
     </p>
-
     <button onclick="entrar()">
       Descubrí tu sorpresa ♡
     </button>
@@ -270,36 +348,25 @@ footer {
 </section>
 
 <section class="seccion" id="inicio">
-
   <h2>solamente para vos</h2>
-
   <p>
     Estuve un par de minutos creando esto,
     asi que me imagino que te va a gustar... 😼
   </p>
-
   <div class="separador"></div>
 </section>
 
 <section class="seccion">
-
   <h2>Boba.</h2>
-
   <p>
     Esta página es un regalo y una muestra de amor
     de la relación que tenemos, te odio.
   </p>
-
   <div class="separador"></div>
 </section>
 
-<section class="seccion">
-
-  <h2>Tarada.</h2>
-
 <section class="seccion galeria-seccion">
   <h2>Fotitos.</h2>
-
   <p>Te odio demasiado ♡</p>
 
   <div class="galeria">
@@ -340,8 +407,10 @@ footer {
   <img id="fotoGrande" src="" alt="Fotografía ampliada">
 </div>
 
-  <div class="carta">
+<section class="seccion">
+  <h2>Tarada.</h2>
 
+  <div class="carta">
     <p>
       Te voy a contar un secretito, desde que te conocí en pandemia,
       me pareciste linda y no se porque me enganche con vos si no te conocía,
@@ -357,16 +426,13 @@ footer {
       nunca pensé que una compañía me haga tan feliz como lo hiciste vos,
       y te amo por haberme hecho pasar los mejores meses de mi vida.
     </p>
-
   </div>
 
   <div class="separador"></div>
 </section>
 
 <section class="seccion">
-
   <h2>Una pequeña sorpresa 🌙</h2>
-
   <p>
     Bueno, todavía tengo algo para decirte...
   </p>
@@ -382,7 +448,6 @@ footer {
       te amo demasiado, tanto que te hice esto.
     </p>
   </div>
-
 </section>
 
 <footer>
@@ -392,7 +457,6 @@ footer {
 </footer>
 
 <script>
-
 function entrar() {
   document.getElementById('inicio').scrollIntoView({
     behavior: 'smooth'
@@ -401,7 +465,6 @@ function entrar() {
 
 function sorpresa() {
   const mensaje = document.getElementById('sorpresa');
-
   mensaje.style.display = 'block';
 
   mensaje.scrollIntoView({
@@ -415,12 +478,10 @@ function crearCorazon() {
 
   corazon.className = 'corazon';
   corazon.textContent = Math.random() > .5 ? '♡' : '✦';
-
   corazon.style.left = Math.random() * 100 + 'vw';
   corazon.style.fontSize = (15 + Math.random() * 20) + 'px';
 
   document.body.appendChild(corazon);
-
   setTimeout(() => corazon.remove(), 8000);
 }
 
@@ -429,7 +490,6 @@ function crearEstrellas() {
 
   estrella.className = 'estrella';
   estrella.textContent = '✦';
-
   estrella.style.left = Math.random() * 100 + 'vw';
   estrella.style.top = Math.random() * 100 + 'vh';
   estrella.style.fontSize = (8 + Math.random() * 12) + 'px';
@@ -446,7 +506,6 @@ for (let i = 0; i < 35; i++) {
 document.querySelectorAll('.polaroid img').forEach(img => {
   img.addEventListener('click', () => {
     document.getElementById('fotoGrande').src = img.src;
-
     document.getElementById('visor').classList.add('activo');
   });
 });
@@ -454,7 +513,6 @@ document.querySelectorAll('.polaroid img').forEach(img => {
 function cerrarFoto() {
   document.getElementById('visor').classList.remove('activo');
 }
-
 </script>
 
 </body>

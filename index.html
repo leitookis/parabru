@@ -4,21 +4,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Abru ♡</title>
+
+<title>Te amo ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+:root {
+  --negro: #08080d;
+  --violeta: #1b1030;
+  --azul: #101b38;
+  --morado: #8052bd;
+  --lila: #c5a4f5;
+  --texto: #e8def4;
+  --secundario: #a99bbd;
+}
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: #fff8f7;
-  color: #765766;
+  background: var(--negro);
+  color: var(--texto);
   font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 15% 20%, #271442 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 75%, #101e43 0%, transparent 45%),
+    #08080d;
 }
 
 .portada {
@@ -26,118 +55,173 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   padding: 30px 20px;
-  background:
-    radial-gradient(circle at 10% 20%, #f9dce5 0, transparent 35%),
-    radial-gradient(circle at 90% 80%, #f4dce8 0, transparent 35%),
-    #fff8f7;
+  text-align: center;
+  position: relative;
 }
 
 .contenido {
-  max-width: 560px;
+  max-width: 600px;
   animation: aparecer 1.5s ease;
 }
 
 .flor {
-  font-size: 48px;
+  font-size: 50px;
   margin-bottom: 25px;
+  filter: drop-shadow(0 0 15px #a77be9);
   animation: flotar 3s infinite ease-in-out;
 }
 
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(48px, 12vw, 76px);
-  color: #c47d98;
-  margin-bottom: 18px;
+  font-size: clamp(60px, 13vw, 95px);
   font-weight: 500;
+  color: #d2b5ff;
+  text-shadow: 0 0 35px #8254bc80;
+  margin-bottom: 18px;
 }
 
 .subtitulo {
   font-family: 'Playfair Display', serif;
   font-style: italic;
+  color: #c0addb;
   font-size: 21px;
   margin-bottom: 35px;
 }
 
 button {
-  border: none;
-  border-radius: 40px;
-  background: #d895aa;
+  background: linear-gradient(135deg, #65408d, #30204f);
+  border: 1px solid #a17ad1;
   color: white;
+  border-radius: 40px;
   padding: 15px 30px;
   font-size: 15px;
   cursor: pointer;
   transition: .3s;
+  box-shadow: 0 0 20px #7549a52c;
 }
 
 button:hover {
-  transform: translateY(-3px);
-  background: #bd7892;
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px #9864d780;
+  background: linear-gradient(135deg, #8052bd, #49306d);
 }
 
 .seccion {
-  max-width: 750px;
+  max-width: 760px;
   margin: auto;
-  padding: 85px 25px;
+  padding: 95px 25px;
   text-align: center;
 }
 
 h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 35px;
-  color: #c47d98;
-  margin-bottom: 20px;
+  font-size: clamp(32px, 6vw, 43px);
+  color: var(--lila);
+  font-weight: 500;
+  margin-bottom: 25px;
+  text-shadow: 0 0 20px #8052bd40;
 }
 
 .seccion p {
-  line-height: 1.9;
+  line-height: 2;
   font-size: 16px;
+  color: var(--secundario);
 }
 
 .carta {
-  background: white;
-  border: 1px solid #f3dce4;
-  border-radius: 20px;
-  padding: 35px 25px;
-  margin-top: 25px;
-  box-shadow: 0 10px 35px #dbaaba20;
+  background: linear-gradient(145deg, #171125, #10172a);
+  border: 1px solid #574078;
+  border-radius: 22px;
+  padding: 35px 28px;
+  margin-top: 30px;
+  box-shadow: 0 15px 50px #00000050;
+  text-align: left;
+}
+
+.carta p {
+  color: #d9cde9;
+  line-height: 2;
+  font-size: 16px;
+}
+
+.separador {
+  width: 65px;
+  height: 2px;
+  margin: 35px auto 0;
+  background: linear-gradient(90deg, transparent, #a77be9, transparent);
 }
 
 .oculto {
   display: none;
-  margin-top: 25px;
+  margin-top: 30px;
   animation: aparecer 1s;
+}
+
+.oculto h2 {
+  font-size: 32px;
 }
 
 footer {
   text-align: center;
-  padding: 35px;
-  color: #c47d98;
+  padding: 50px 20px;
+  color: #a78bc8;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
 }
 
-@keyframes aparecer {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes flotar {
-  50% { transform: translateY(-10px); }
+.estrella {
+  position: fixed;
+  pointer-events: none;
+  z-index: -1;
+  color: #c6a5f6;
+  animation: parpadear 3s infinite ease-in-out;
 }
 
 .corazon {
   position: fixed;
   bottom: -30px;
-  color: #e7a6ba;
-  animation: subir 7s linear forwards;
+  color: #a77be9;
   pointer-events: none;
-  z-index: 5;
+  z-index: 10;
+  animation: subir 8s linear forwards;
+  text-shadow: 0 0 12px #a77be9;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flotar {
+  50% { transform: translateY(-12px); }
 }
 
 @keyframes subir {
   to {
-    transform: translateY(-110vh) rotate(30deg);
+    transform: translateY(-110vh) rotate(35deg);
     opacity: 0;
+  }
+}
+
+@keyframes parpadear {
+  0%, 100% { opacity: .2; }
+  50% { opacity: .9; }
+}
+
+@media(max-width: 500px) {
+  .seccion {
+    padding: 70px 22px;
+  }
+
+  .carta {
+    padding: 25px 20px;
   }
 }
 </style>
@@ -147,67 +231,101 @@ footer {
 
 <section class="portada">
   <div class="contenido">
-    <div class="flor">🌷</div>
-    <h1>Para Abru</h1>
+    <div class="flor">🌙</div>
+
+    <h1>Te amo</h1>
+
     <p class="subtitulo">
-      Un pequeño universo creado solamente para vos ♡
+      para la persona más boluda♡
     </p>
-    <button onclick="entrar()">Descubrí tu sorpresa ♡</button>
+
+    <button onclick="entrar()">
+      Descubrí tu sorpresa ♡
+    </button>
   </div>
 </section>
 
 <section class="seccion" id="inicio">
-  <h2>Bienvenida a tu rinconcito</h2>
+
+  <h2>solamente para vos</h2>
+
   <p>
-    Quería crear algo diferente, algo que pudieras guardar
-    y visitar cuando quisieras.
-    Este pequeño lugar es solamente tuyo.
+    Estuve un par de minutos creando esto,
+    asi que me imagino que te va a gustar... 😼
   </p>
+
+  <div class="separador"></div>
 </section>
 
 <section class="seccion">
-  <h2>Nuestra historia ✨</h2>
+
+  <h2>Boba.</h2>
+
   <p>
-    Acá voy a guardar todos esos momentos que hacen
-    que nuestra historia sea tan especial.
-    Los mejores recuerdos todavía están por venir.
+    Esta página es un regalo y una muestra de amor
+    de la relación que tenemos, te odio.
   </p>
+
+  <div class="separador"></div>
 </section>
 
 <section class="seccion">
-  <h2>Unas palabras para vos 💌</h2>
+
+  <h2>Tarada.</h2>
+
   <div class="carta">
+
     <p>
-      Mi querida Abru:
+      Te voy a contar un secretito, desde que te conocí en pandemia,
+      me pareciste linda y no se porque me enganche con vos si no te conocía,
+      y me era muy raro pensar en una persona que había visto pocas veces,
+      pero creo que conectamos, aunque en ese tiempo no te daba mucha atención,
+      y que nadie sabe esto, me empezaste a gustar desde ahi aunque hay veces
+      que lo negué.
+
       <br><br>
-      Si estás leyendo esto, quiero que sepas
-      que hice esta página pensando en vos.
-      <br><br>
-      Porque te merecés cosas bonitas,
-      momentos felices y muchísimo amor.
-      <br><br>
-      Con todo mi cariño. ♡
+
+      Bueno, no quiero llenarte con lo mismo de siempre de 3ro, 4to, 5to,
+      y eso. Pero quiero decir que este año fue el mejor que pase en toda mi vida,
+      nunca pensé que una compañía me haga tan feliz como lo hiciste vos,
+      y te amo por haberme hecho pasar los mejores meses de mi vida.
+    </p>
+
+  </div>
+
+  <div class="separador"></div>
+</section>
+
+<section class="seccion">
+
+  <h2>Una pequeña sorpresa 🌙</h2>
+
+  <p>
+    Bueno, todavía tengo algo para decirte...
+  </p>
+
+  <button onclick="sorpresa()">
+    Tocá acá, boba ♡
+  </button>
+
+  <div id="sorpresa" class="oculto">
+    <h2>TE AMO. 🖤</h2>
+    <p>
+      Y aunque te diga tarada, boba y todas esas cosas,
+      no cambiaría por nada tenerte en mi vida.
     </p>
   </div>
-</section>
 
-<section class="seccion">
-  <h2>Una pequeña sorpresa 🎀</h2>
-  <p>Hay algo que quiero recordarte...</p>
-  <button onclick="sorpresa()">Tocá acá ♡</button>
-  <div id="sorpresa" class="oculto">
-    <h2>¡Sos mi persona favorita! ❤️</h2>
-    <p>Y este rinconcito siempre será tuyo.</p>
-  </div>
 </section>
 
 <footer>
-  Hecho con amor, solamente para Abru ♡
+  Hecho con amor, aunque seas una boluda ♡
   <br><br>
   2026
 </footer>
 
 <script>
+
 function entrar() {
   document.getElementById('inicio').scrollIntoView({
     behavior: 'smooth'
@@ -215,21 +333,49 @@ function entrar() {
 }
 
 function sorpresa() {
-  document.getElementById('sorpresa').style.display = 'block';
+  const mensaje = document.getElementById('sorpresa');
+
+  mensaje.style.display = 'block';
+
+  mensaje.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  });
 }
 
 function crearCorazon() {
   const corazon = document.createElement('div');
+
   corazon.className = 'corazon';
-  corazon.textContent = '♡';
+  corazon.textContent = Math.random() > .5 ? '♡' : '✦';
+
   corazon.style.left = Math.random() * 100 + 'vw';
   corazon.style.fontSize = (15 + Math.random() * 20) + 'px';
+
   document.body.appendChild(corazon);
 
-  setTimeout(() => corazon.remove(), 7000);
+  setTimeout(() => corazon.remove(), 8000);
 }
 
-setInterval(crearCorazon, 1200);
+function crearEstrellas() {
+  const estrella = document.createElement('div');
+
+  estrella.className = 'estrella';
+  estrella.textContent = '✦';
+
+  estrella.style.left = Math.random() * 100 + 'vw';
+  estrella.style.top = Math.random() * 100 + 'vh';
+  estrella.style.fontSize = (8 + Math.random() * 12) + 'px';
+
+  document.body.appendChild(estrella);
+}
+
+setInterval(crearCorazon, 1500);
+
+for (let i = 0; i < 35; i++) {
+  crearEstrellas();
+}
+
 </script>
 
 </body>
